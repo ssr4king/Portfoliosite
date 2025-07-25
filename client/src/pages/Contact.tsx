@@ -55,19 +55,19 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA, USA",
+      value: "Bhopal, Madhya Pradesh, India",
       testId: "contact-location"
     },
     {
       icon: Mail,
       title: "Email",
-      value: "hello@chandni.dev",
+      value: "s.shubham999000@gmail.com",
       testId: "contact-email"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91-6265037768",
       testId: "contact-phone"
     },
     {

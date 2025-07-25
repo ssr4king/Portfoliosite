@@ -2,11 +2,12 @@
 
 ## Overview
 
-This is a modern portfolio website built with React, TypeScript, and Express.js. The application features a professional portfolio design with sections for home, about, skills, services, portfolio, and contact. It uses a full-stack architecture with a React frontend and Express backend, connected to a PostgreSQL database for storing contact form submissions.
+This is a modern portfolio website built with React, TypeScript, and Express.js for Shubham Kumar, a Computer Science Engineering student at IES College of Technology Bhopal. The application features a professional single-page scrolling portfolio with dark theme, cyan glow effects, and sections for home, about, skills, portfolio, and contact. It uses a full-stack architecture with a React frontend and Express backend, connected to a PostgreSQL database for storing contact form submissions.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Personal Information: Updated with actual details from Shubham's CV including contact info, education, projects, and skills.
 
 ## System Architecture
 
@@ -41,8 +42,45 @@ The application follows a monorepo structure with clear separation between clien
 ## Data Flow
 
 1. **Contact Form Submission**: Client submits form → validation with Zod → API request to `/api/contact` → server validation → database storage → success response
-2. **Page Navigation**: Client-side routing with Wouter handles navigation between portfolio sections
+2. **Page Navigation**: Single-page scrolling with smooth scroll functionality handles navigation between portfolio sections
 3. **UI Interactions**: Form submissions use TanStack Query mutations for optimistic updates and error handling
+4. **Project Details**: Click on portfolio projects opens detailed modal with full project information
+
+## Recent Changes (January 2025)
+
+### Personal Information Integration
+- Updated all personal details with authentic information from Shubham's CV:
+  - Name: Shubham Kumar
+  - Education: B.Tech CSE at IES College of Technology Bhopal (CGPA: 7.60)
+  - Contact: +91-6265037768, s.shubham999000@gmail.com
+  - Location: Bhopal, Madhya Pradesh, India
+  - Skills: HTML/CSS, JavaScript, Java, C++, Basic React, Oracle SQL
+
+### Portfolio Projects Update
+- Replaced placeholder projects with actual projects from CV:
+  1. **Starbucks Frontend Webpage** (2024) - HTML, CSS, FontAwesome
+  2. **Personal Portfolio Website** (2024) - HTML, CSS, JavaScript, Basic React
+  3. **E-Commerce Frontend Website** (2024) - HTML, CSS, FontAwesome
+- Added project detail modal functionality with full descriptions
+- Click on any project card opens detailed modal with comprehensive information
+
+### Single-Page Navigation
+- Converted from multi-page routing to single-page scrolling design
+- All sections (Home, About, Skills, Portfolio, Contact) load on one page
+- Navigation links use smooth scrolling to respective sections
+- Footer links updated to scroll within the page
+- Active section highlighting in navigation
+
+### Technical Skills Update
+- Programming languages: HTML/CSS (95%), JavaScript (85%), Java (90%), C++ (85%), React Basic (70%)
+- Tools and technologies aligned with actual experience
+- Updated certifications to reflect coursework at IES College
+
+### Education Section Enhancement
+- B.Tech Computer Science Engineering (2021-2025) - IES College of Technology Bhopal
+- CBSE Class XII (2020) - Holy Kids Intl School, Bihar - 66.6%
+- NSS Volunteer (2020) - National Service Scheme participation
+- CBSE Class X (2018) - AND Public School, Bihar - 64.6%
 
 ## External Dependencies
 

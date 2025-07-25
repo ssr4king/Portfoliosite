@@ -60,22 +60,20 @@ const About = () => {
               <h3 className="text-4xl font-bold mb-2" data-testid="about-heading">
                 About <span className="text-gradient-pink">Me</span>
               </h3>
-              <h4 className="text-2xl font-semibold text-[var(--cyan-glow)] mb-6">Full Stack Developer!</h4>
+              <h4 className="text-2xl font-semibold text-[var(--cyan-glow)] mb-6">Frontend Developer!</h4>
             </div>
             
             <p className="text-gray-400 leading-relaxed text-sm" data-testid="about-description">
-              I am a skilled web designer with over 3 years of experience in the industry. My passion lies in 
-              creating captivating website designs and implementing them through frontend development. I take 
-              pride in staying up-to-date with current design trends and always strive for creativity and 
-              uniqueness in my work.
+              I am a dedicated Computer Science Engineering student at IES College of Technology Bhopal with a 
+              passion for frontend web development. Currently pursuing my B.Tech with a CGPA of 7.60, I specialize 
+              in creating responsive and visually appealing web applications.
               <br /><br />
-              Throughout my career, I have developed a deep understanding of user experience (UX) principles. 
-              By putting myself in the shoes of the end-users, I strive to create intuitive and seamless 
-              browsing experiences. I believe that a well-designed website should not only look visually 
-              appealing but also provide a smooth and enjoyable interaction for visitors. When starting a 
-              new project, I thoroughly research and analyze the target audience and the client's specific 
-              requirements. This enables me to tailor my designs to meet their expectations and deliver a 
-              unique online presence that aligns with their brand identity.
+              My technical expertise includes proficiency in HTML, CSS, JavaScript, Java, C++, and basic React. 
+              I have hands-on experience with Oracle SQL and have successfully completed multiple frontend projects 
+              including Starbucks webpage clone, E-commerce website, and my personal portfolio. I have solved over 
+              100+ coding problems on various platforms, demonstrating strong problem-solving skills in Data 
+              Structures and Algorithms. I believe in continuous learning and staying updated with the latest 
+              web development trends and technologies.
             </p>
             
             {/* Social Links */}
@@ -149,12 +147,12 @@ const About = () => {
               <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
                 <i className="fas fa-graduation-cap text-2xl text-[var(--cyan-glow)]"></i>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Bachelor of Computer Science</h4>
-              <p className="text-[var(--cyan-glow)] font-semibold mb-2">University of Technology</p>
-              <p className="text-gray-400 text-sm mb-3">2018 - 2022</p>
+              <h4 className="text-xl font-bold text-white mb-2">B.Tech Computer Science Engineering</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">IES College of Technology Bhopal</p>
+              <p className="text-gray-400 text-sm mb-3">2021 - 2025</p>
               <p className="text-gray-400 text-sm">
-                Specialized in web development, software engineering, and database management. 
-                Graduated with honors and received excellence award in frontend development.
+                Currently pursuing Bachelor of Technology in Computer Science with CGPA 7.60. 
+                Specialized in Data Structures, Algorithms, Database Management, and Object-Oriented Programming.
               </p>
             </motion.div>
 
@@ -169,12 +167,12 @@ const About = () => {
               <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
                 <i className="fas fa-certificate text-2xl text-[var(--cyan-glow)]"></i>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Full Stack Web Development</h4>
-              <p className="text-[var(--cyan-glow)] font-semibold mb-2">FreeCodeCamp</p>
-              <p className="text-gray-400 text-sm mb-3">2023</p>
+              <h4 className="text-xl font-bold text-white mb-2">CBSE Class XII</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">Holy Kids Intl School, Bihar</p>
+              <p className="text-gray-400 text-sm mb-3">2020</p>
               <p className="text-gray-400 text-sm">
-                Comprehensive certification covering React, Node.js, MongoDB, and modern web development practices. 
-                Completed 300+ hours of coursework and practical projects.
+                Completed Higher Secondary Education with 66.6% marks. 
+                Strong foundation in Mathematics and Science subjects that led to pursuing engineering.
               </p>
             </motion.div>
 
@@ -189,12 +187,12 @@ const About = () => {
               <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
                 <i className="fab fa-aws text-2xl text-[var(--cyan-glow)]"></i>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">AWS Certified Developer</h4>
-              <p className="text-[var(--cyan-glow)] font-semibold mb-2">Amazon Web Services</p>
-              <p className="text-gray-400 text-sm mb-3">2024</p>
+              <h4 className="text-xl font-bold text-white mb-2">NSS Volunteer</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">National Service Scheme</p>
+              <p className="text-gray-400 text-sm mb-3">2020</p>
               <p className="text-gray-400 text-sm">
-                Professional certification in cloud development, serverless architecture, and deployment strategies. 
-                Expertise in EC2, Lambda, S3, and RDS services.
+                Actively participated as a volunteer in National Service Scheme, contributing to 
+                community service and social development activities.
               </p>
             </motion.div>
 
@@ -209,12 +207,12 @@ const About = () => {
               <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
                 <i className="fab fa-google text-2xl text-[var(--cyan-glow)]"></i>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Google UX Design Certificate</h4>
-              <p className="text-[var(--cyan-glow)] font-semibold mb-2">Google Career Certificates</p>
-              <p className="text-gray-400 text-sm mb-3">2023</p>
+              <h4 className="text-xl font-bold text-white mb-2">CBSE Class X</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">AND Public School, Bihar</p>
+              <p className="text-gray-400 text-sm mb-3">2018</p>
               <p className="text-gray-400 text-sm">
-                Comprehensive program covering user experience design principles, prototyping, 
-                and user research methodologies. Focus on creating user-centered digital experiences.
+                Completed Secondary Education with 64.6% marks. 
+                Built strong fundamentals in core subjects including Mathematics, Science, and English.
               </p>
             </motion.div>
           </div>

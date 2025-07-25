@@ -5,32 +5,32 @@ const Skills = () => {
   const [inView, setInView] = useState(false);
 
   const technicalSkills = [
-    { name: "JavaScript", level: 95 },
-    { name: "React.js", level: 90 },
-    { name: "Node.js", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "CSS/SCSS", level: 95 },
+    { name: "HTML/CSS", level: 95 },
+    { name: "JavaScript", level: 85 },
+    { name: "Java", level: 90 },
+    { name: "C++", level: 85 },
+    { name: "React (Basic)", level: 70 },
   ];
 
   const tools = [
-    { name: "React", icon: "fab fa-react" },
-    { name: "Vue.js", icon: "fab fa-vuejs" },
-    { name: "Node.js", icon: "fab fa-node-js" },
-    { name: "MongoDB", icon: "fas fa-database" },
+    { name: "HTML5", icon: "fab fa-html5" },
+    { name: "CSS3", icon: "fab fa-css3-alt" },
+    { name: "JavaScript", icon: "fab fa-js-square" },
+    { name: "Java", icon: "fab fa-java" },
+    { name: "Oracle SQL", icon: "fas fa-database" },
     { name: "Git", icon: "fab fa-git-alt" },
-    { name: "Docker", icon: "fab fa-docker" },
   ];
 
   const certifications = [
     {
-      title: "Full Stack Web Development",
-      institution: "University of Technology",
-      year: "2018"
+      title: "Data Structures and Algorithms",
+      institution: "IES College of Technology",
+      year: "2024"
     },
     {
-      title: "AWS Certified Developer",
-      institution: "Amazon Web Services",
-      year: "2022"
+      title: "Object Oriented Programming (Java)",
+      institution: "IES College of Technology",
+      year: "2023"
     }
   ];
 

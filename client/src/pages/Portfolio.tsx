@@ -1,78 +1,66 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ExternalLink, Github } from "lucide-react";
+
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  fullDescription: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  year: string;
+}
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filters = [
     { id: "all", label: "All Projects" },
     { id: "web", label: "Web Development" },
-    { id: "mobile", label: "Mobile Apps" },
-    { id: "design", label: "UI/UX Design" },
+    { id: "frontend", label: "Frontend" },
+    { id: "ecommerce", label: "E-Commerce" },
   ];
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and payment integration",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "web",
-      technologies: ["React", "Node.js", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Starbucks Frontend Webpage",
+      description: "Fully responsive and visually appealing Starbucks website clone",
+      fullDescription: "Created a fully responsive and visually appealing Starbucks website clone as a frontend web development project. This project demonstrates proficiency in modern web development techniques, responsive design principles, and attention to detail in recreating a popular brand's web presence. The website includes navigation menu, promotional sections, and announcement areas, all built with clean, semantic HTML and styled with modern CSS techniques.",
+      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      category: "frontend",
+      technologies: ["HTML", "CSS", "FontAwesome"],
+      githubUrl: "#",
+      year: "2024"
     },
     {
       id: 2,
-      title: "Fitness Tracking App",
-      description: "React Native fitness app with workout tracking and social features",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "mobile",
-      technologies: ["React Native", "Firebase", "TypeScript"],
+      title: "Personal Portfolio Website",
+      description: "A professionally crafted portfolio highlighting career achievements and skills",
+      fullDescription: "A professionally crafted Portfolio website that highlights career achievements, skills, and projects in a visually appealing format. This web development project showcases modern frontend development practices, responsive design, and user experience considerations. The portfolio includes interactive elements, smooth animations, and a clean, professional design that effectively communicates technical skills and project experience.",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      category: "web",
+      technologies: ["HTML", "CSS", "JavaScript", "Basic React", "FontAwesome"],
       liveUrl: "#",
-      githubUrl: "#"
+      year: "2024"
     },
     {
       id: 3,
-      title: "Banking App Redesign",
-      description: "Complete UI/UX redesign for mobile banking with improved user experience",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "design",
-      technologies: ["Figma", "UI/UX", "Prototyping"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 4,
-      title: "Analytics Dashboard",
-      description: "Real-time analytics dashboard with interactive charts and data visualization",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "web",
-      technologies: ["Vue.js", "D3.js", "Python"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 5,
-      title: "Social Media App",
-      description: "Full-featured social platform with real-time messaging and content sharing",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "mobile",
-      technologies: ["Flutter", "Firebase", "Dart"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 6,
-      title: "Corporate Website",
-      description: "Professional corporate website with CMS integration and SEO optimization",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-      category: "web",
-      technologies: ["WordPress", "PHP", "MySQL"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "E-Commerce Frontend Website",
+      description: "Responsive E-Commerce website clone with modern UI/UX design",
+      fullDescription: "Created a fully responsive and visually appealing E-Commerce website clone as a frontend web development project. This project demonstrates expertise in building commercial-grade web applications with focus on user experience, responsive design, and modern web standards. The website features product navigation, promotional sections, shopping cart functionality, and responsive design that works seamlessly across all devices.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+      category: "ecommerce",
+      technologies: ["HTML", "CSS", "FontAwesome"],
+      githubUrl: "#",
+      year: "2024"
     }
   ];
 
@@ -130,7 +118,10 @@ const Portfolio = () => {
               layout
               data-testid={`project-${project.id}`}
             >
-              <div className="bg-gray-800/50 rounded-xl overflow-hidden hover-glow backdrop-blur-sm transition-all">
+              <div 
+                className="bg-gray-800/50 rounded-xl overflow-hidden hover-glow backdrop-blur-sm transition-all cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image}
@@ -139,20 +130,26 @@ const Portfolio = () => {
                     data-testid={`project-image-${project.id}`}
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <a 
-                      href={project.liveUrl}
-                      className="p-2 bg-[var(--cyan-glow)] rounded-full hover:bg-[var(--cyan-bright)] transition-colors"
-                      data-testid={`project-live-${project.id}`}
-                    >
-                      <ExternalLink className="w-5 h-5 text-white" />
-                    </a>
-                    <a 
-                      href={project.githubUrl}
-                      className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
-                      data-testid={`project-github-${project.id}`}
-                    >
-                      <Github className="w-5 h-5 text-white" />
-                    </a>
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl}
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-2 bg-[var(--cyan-glow)] rounded-full hover:bg-[var(--cyan-bright)] transition-colors"
+                        data-testid={`project-live-${project.id}`}
+                      >
+                        <ExternalLink className="w-5 h-5 text-white" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl}
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
+                        data-testid={`project-github-${project.id}`}
+                      >
+                        <Github className="w-5 h-5 text-white" />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div className="p-6">
@@ -160,11 +157,12 @@ const Portfolio = () => {
                     <h3 className="text-xl font-bold text-white" data-testid={`project-title-${project.id}`}>
                       {project.title}
                     </h3>
+                    <span className="text-sm text-[var(--cyan-glow)]">{project.year}</span>
                   </div>
                   <p className="text-gray-400 text-sm mb-4" data-testid={`project-description-${project.id}`}>
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -195,6 +193,78 @@ const Portfolio = () => {
           </Button>
         </motion.div>
       </div>
+
+      {/* Project Detail Modal */}
+      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-gray-900 border-gray-700">
+          {selectedProject && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-white mb-4">
+                  {selectedProject.title}
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="space-y-6">
+                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <img 
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-[var(--cyan-glow)]/20 text-[var(--cyan-glow)] text-sm rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-[var(--cyan-glow)] font-semibold">{selectedProject.year}</span>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3">Project Details</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {selectedProject.fullDescription}
+                  </p>
+                </div>
+                
+                <div className="flex gap-4">
+                  {selectedProject.liveUrl && (
+                    <Button 
+                      asChild
+                      className="bg-[var(--cyan-glow)] text-[var(--navy)] hover:bg-[var(--cyan-bright)]"
+                    >
+                      <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Live Site
+                      </a>
+                    </Button>
+                  )}
+                  {selectedProject.githubUrl && (
+                    <Button 
+                      asChild
+                      variant="outline"
+                      className="border-gray-600 text-white hover:bg-gray-800"
+                    >
+                      <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

@@ -12,10 +12,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: 10, label: "Years of", sublabel: "experience" },
-    { value: 30, label: "Projects", sublabel: "completed" },
-    { value: 5, label: "Technologies", sublabel: "mastered" },
-    { value: 100, label: "Satisfied", sublabel: "clients" },
+    { value: 3, label: "Years of", sublabel: "experience" },
+    { value: 15, label: "Projects", sublabel: "completed" },
+    { value: 8, label: "Technologies", sublabel: "mastered" },
+    { value: 100, label: "DSA Problems", sublabel: "solved" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -72,7 +72,7 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   data-testid="main-name"
                 >
-                  Chandni Chauhan
+                  Shubham Kumar
                 </motion.h1>
                 <motion.div 
                   className="text-xl sm:text-2xl lg:text-3xl text-gray-300"
@@ -82,7 +82,7 @@ const Home = () => {
                   data-testid="role-text"
                 >
                   And I'm a{" "}
-                  <TypeWriter texts={["Web Developer", "UI/UX Designer", "Full Stack Developer", "Problem Solver"]} />
+                  <TypeWriter texts={["Frontend Developer", "Full Stack Developer", "Web Developer", "Problem Solver"]} />
                 </motion.div>
               </div>
               
@@ -93,8 +93,8 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 data-testid="description-text"
               >
-                I am a skilled web designer with over 3 years of experience in the industry. 
-                My passion lies in creating captivating website designs and implementing them through frontend development.
+                I am a passionate Computer Science Engineering student specializing in frontend development. 
+                My expertise includes creating responsive web applications using modern technologies like HTML, CSS, JavaScript, and React.
               </motion.p>
               
               {/* Social Media Icons */}
