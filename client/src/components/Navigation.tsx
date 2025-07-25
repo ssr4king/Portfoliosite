@@ -1,0 +1,132 @@
+import { useState } from "react";
+import { Link, useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+const Navigation = () => {
+  const [location] = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Skills", path: "/skills" },
+    { name: "Services", path: "/services" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const isActive = (path: string) => location === path;
+
+  const handleDownloadCV = () => {
+    // In a real application, this would download the actual CV file
+    alert("CV download functionality would be implemented here");
+  };
+
+  return (
+    <nav className="fixed top-0 w-full z-50 bg-[var(--navy)]/90 backdrop-blur-sm border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <h1 className="text-2xl font-bold">
+              <span className="text-white">Port</span>
+              <span className="text-[var(--cyan-glow)]">folio</span>
+            </h1>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`nav-link px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-[var(--cyan-glow)] active"
+                      : "text-white hover:text-[var(--cyan-glow)]"
+                  }`}
+                  data-testid={`nav-${item.name.toLowerCase()}`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+              data-testid="theme-toggle"
+            >
+              <i className="fas fa-moon text-[var(--cyan-glow)]"></i>
+            </Button>
+            <Button
+              onClick={handleDownloadCV}
+              className="btn-pink px-6 py-2 rounded-full text-white font-medium flex items-center space-x-2"
+              data-testid="download-cv-desktop"
+            >
+              <span>Download CV</span>
+              <i className="fas fa-download"></i>
+            </Button>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="sm" data-testid="mobile-menu-trigger">
+                  <i className="fas fa-bars text-xl text-white"></i>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64 bg-[var(--navy)] border-gray-800">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-center p-4 border-b border-gray-800">
+                    <h2 className="text-xl font-bold text-gradient">Menu</h2>
+                  </div>
+                  
+                  <nav className="flex-1 p-4">
+                    <div className="space-y-4">
+                      {navItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          href={item.path}
+                          onClick={() => setIsOpen(false)}
+                          className={`block py-3 px-4 rounded-lg transition-colors ${
+                            isActive(item.path)
+                              ? "text-[var(--cyan-glow)] bg-[var(--dark-blue)]"
+                              : "text-white hover:text-[var(--cyan-glow)] hover:bg-[var(--dark-blue)]"
+                          }`}
+                          data-testid={`mobile-nav-${item.name.toLowerCase()}`}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </nav>
+                  
+                  <div className="p-4 border-t border-gray-800">
+                    <Button
+                      onClick={handleDownloadCV}
+                      className="btn-pink w-full px-6 py-3 rounded-full text-white font-medium flex items-center justify-center space-x-2"
+                      data-testid="download-cv-mobile"
+                    >
+                      <span>Download CV</span>
+                      <i className="fas fa-download"></i>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
