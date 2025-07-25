@@ -42,7 +42,7 @@ const Home = () => {
               <img 
                 src={profileImage}
                 alt="Shubham Kumar - Frontend Developer" 
-                className="w-full h-full object-cover rounded-full" 
+                className="w-full h-full object-cover object-center rounded-full" 
                 data-testid="profile-image"
               />
             </div>

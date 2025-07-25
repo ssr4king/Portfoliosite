@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import profileImage from "@assets/WhatsApp Image 2025-07-19 at 11.09.06 AM_1753471708316.jpeg";
 
 const About = () => {
   const contactInfo = [
@@ -41,9 +42,9 @@ const About = () => {
           >
             <div className="profile-glow-static w-80 h-80 sm:w-96 sm:h-96" data-testid="about-profile-image-container">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-                alt="About me" 
-                className="w-full h-full object-cover rounded-full" 
+                src={profileImage}
+                alt="Shubham Kumar - About me" 
+                className="w-full h-full object-cover object-center rounded-full" 
                 data-testid="about-profile-image"
               />
             </div>

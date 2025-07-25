@@ -137,6 +137,12 @@
     border-radius: 50%;
     padding: 4px;
     background: linear-gradient(135deg, var(--cyan-glow), var(--cyan-bright), var(--cyan-glow));
+    overflow: hidden;
+  }
+  
+  .profile-glow-static img {
+    border-radius: 50%;
+    display: block;
   }
   
   .profile-glow-static::before {
