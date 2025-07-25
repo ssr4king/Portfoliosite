@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Download, Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import cvFile from "@assets/Shubham157_CV (3)_1753471316750.pdf";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -45,8 +48,12 @@ const Navigation = () => {
   }, []);
 
   const handleDownloadCV = () => {
-    // In a real application, this would download the actual CV file
-    alert("CV download functionality would be implemented here");
+    const link = document.createElement('a');
+    link.href = cvFile;
+    link.download = 'Shubham_Kumar_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -83,30 +90,24 @@ const Navigation = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
-              data-testid="theme-toggle"
-            >
-              <i className="fas fa-moon text-[var(--cyan-glow)]"></i>
-            </Button>
+            <ThemeToggle />
             <Button
               onClick={handleDownloadCV}
               className="btn-pink px-6 py-2 rounded-full text-white font-medium flex items-center space-x-2"
               data-testid="download-cv-desktop"
             >
               <span>Download CV</span>
-              <i className="fas fa-download"></i>
+              <Download className="w-4 h-4" />
             </Button>
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="sm" data-testid="mobile-menu-trigger">
-                  <i className="fas fa-bars text-xl text-white"></i>
+                  <Menu className="w-5 h-5 text-white" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-64 bg-[var(--navy)] border-gray-800">
@@ -141,7 +142,7 @@ const Navigation = () => {
                       data-testid="download-cv-mobile"
                     >
                       <span>Download CV</span>
-                      <i className="fas fa-download"></i>
+                      <Download className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TypeWriter from "@/components/TypeWriter";
+import profileImage from "@assets/WhatsApp Image 2025-07-19 at 11.09.06 AM_1753471708316.jpeg";
 
 const Home = () => {
   const socialLinks = [
@@ -39,8 +40,8 @@ const Home = () => {
           >
             <div className="profile-glow-static w-80 h-80 sm:w-96 sm:h-96" data-testid="profile-image-container">
               <img 
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-                alt="Professional headshot" 
+                src={profileImage}
+                alt="Shubham Kumar - Frontend Developer" 
                 className="w-full h-full object-cover rounded-full" 
                 data-testid="profile-image"
               />
