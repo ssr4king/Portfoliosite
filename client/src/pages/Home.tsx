@@ -31,7 +31,7 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="profile-glow w-80 h-80 sm:w-96 sm:h-96" data-testid="profile-image-container">
+            <div className="profile-glow-static w-80 h-80 sm:w-96 sm:h-96" data-testid="profile-image-container">
               <img 
                 src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
                 alt="Professional headshot" 
@@ -87,8 +87,8 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 data-testid="description-text"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim eu massa tempus 
-                possimus vulputate quis neque scelerisque, ex, consectetur elementum mi duis pellentesque at.
+                I am a skilled web designer with over 3 years of experience in the industry. 
+                My passion lies in creating captivating website designs and implementing them through frontend development.
               </motion.p>
               
               {/* Social Media Icons */}

@@ -102,6 +102,24 @@
     opacity: 0.8;
     z-index: -1;
   }
+
+  .profile-glow-static {
+    position: relative;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--cyan-glow), var(--cyan-bright), var(--cyan-glow));
+  }
+  
+  .profile-glow-static::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan-glow), var(--cyan-bright), var(--cyan-glow));
+    filter: blur(10px);
+    opacity: 0.8;
+    z-index: -1;
+  }
   
   .hover-glow:hover {
     box-shadow: 0 0 20px hsla(188, 94%, 43%, 0.5);
