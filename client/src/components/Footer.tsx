@@ -1,16 +1,21 @@
-import { Link } from "wouter";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "home" },
+    { name: "About", path: "about" },
+    { name: "Skills", path: "skills" },
+    { name: "Services", path: "services" },
+    { name: "Portfolio", path: "portfolio" },
+    { name: "Contact", path: "contact" },
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const socialLinks = [
     { icon: "fab fa-facebook-f", href: "#", label: "Facebook" },
@@ -52,13 +57,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    href={link.path}
+                  <button
+                    onClick={() => scrollToSection(link.path)}
                     className="text-gray-400 hover:text-[var(--cyan-glow)] transition-colors"
                     data-testid={`footer-link-${link.name.toLowerCase()}`}
                   >
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>

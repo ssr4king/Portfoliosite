@@ -121,6 +121,104 @@ const About = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Education Section */}
+        <motion.div 
+          className="mt-20 pt-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gradient mb-4" data-testid="education-title">Education</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto" data-testid="education-subtitle">
+              My academic journey and professional certifications
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div 
+              className="bg-gray-800/50 p-6 rounded-xl hover-glow backdrop-blur-sm transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              data-testid="education-degree"
+            >
+              <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-graduation-cap text-2xl text-[var(--cyan-glow)]"></i>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Bachelor of Computer Science</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">University of Technology</p>
+              <p className="text-gray-400 text-sm mb-3">2018 - 2022</p>
+              <p className="text-gray-400 text-sm">
+                Specialized in web development, software engineering, and database management. 
+                Graduated with honors and received excellence award in frontend development.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-gray-800/50 p-6 rounded-xl hover-glow backdrop-blur-sm transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              data-testid="education-certification"
+            >
+              <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-certificate text-2xl text-[var(--cyan-glow)]"></i>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Full Stack Web Development</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">FreeCodeCamp</p>
+              <p className="text-gray-400 text-sm mb-3">2023</p>
+              <p className="text-gray-400 text-sm">
+                Comprehensive certification covering React, Node.js, MongoDB, and modern web development practices. 
+                Completed 300+ hours of coursework and practical projects.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-gray-800/50 p-6 rounded-xl hover-glow backdrop-blur-sm transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              data-testid="education-aws"
+            >
+              <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
+                <i className="fab fa-aws text-2xl text-[var(--cyan-glow)]"></i>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">AWS Certified Developer</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">Amazon Web Services</p>
+              <p className="text-gray-400 text-sm mb-3">2024</p>
+              <p className="text-gray-400 text-sm">
+                Professional certification in cloud development, serverless architecture, and deployment strategies. 
+                Expertise in EC2, Lambda, S3, and RDS services.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-gray-800/50 p-6 rounded-xl hover-glow backdrop-blur-sm transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              data-testid="education-google"
+            >
+              <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center mb-4">
+                <i className="fab fa-google text-2xl text-[var(--cyan-glow)]"></i>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Google UX Design Certificate</h4>
+              <p className="text-[var(--cyan-glow)] font-semibold mb-2">Google Career Certificates</p>
+              <p className="text-gray-400 text-sm mb-3">2023</p>
+              <p className="text-gray-400 text-sm">
+                Comprehensive program covering user experience design principles, prototyping, 
+                and user research methodologies. Focus on creating user-centered digital experiences.
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

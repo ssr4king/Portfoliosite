@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TypeWriter from "@/components/TypeWriter";
-import { Link } from "wouter";
 
 const Home = () => {
   const socialLinks = [
@@ -18,6 +17,13 @@ const Home = () => {
     { value: 5, label: "Technologies", sublabel: "mastered" },
     { value: 100, label: "Satisfied", sublabel: "clients" },
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="min-h-screen flex items-center pt-16">
@@ -128,15 +134,14 @@ const Home = () => {
                 >
                   Hire Me
                 </Button>
-                <Link href="/contact">
-                  <Button 
-                    variant="outline"
-                    className="btn-outline px-8 py-3 font-semibold rounded-full"
-                    data-testid="contact-me-button"
-                  >
-                    Contact Me
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => scrollToSection('contact')}
+                  variant="outline"
+                  className="btn-outline px-8 py-3 font-semibold rounded-full"
+                  data-testid="contact-me-button"
+                >
+                  Contact Me
+                </Button>
               </motion.div>
             </div>
           </motion.div>

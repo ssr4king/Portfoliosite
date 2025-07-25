@@ -1,22 +1,48 @@
-import { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
-  const [location] = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "home" },
+    { name: "About", path: "about" },
+    { name: "Skills", path: "skills" },
+    { name: "Services", path: "services" },
+    { name: "Portfolio", path: "portfolio" },
+    { name: "Contact", path: "contact" },
   ];
 
-  const isActive = (path: string) => location === path;
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsOpen(false);
+    }
+  };
+
+  const isActive = (path: string) => activeSection === path;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.path);
+      const scrollPosition = window.scrollY + 100; // Offset for fixed navbar
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleDownloadCV = () => {
     // In a real application, this would download the actual CV file
@@ -28,20 +54,20 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <button onClick={() => scrollToSection('home')} className="flex-shrink-0">
             <h1 className="text-2xl font-bold">
               <span className="text-white">Port</span>
               <span className="text-[var(--cyan-glow)]">folio</span>
             </h1>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.path}
-                  href={item.path}
+                  onClick={() => scrollToSection(item.path)}
                   className={`nav-link px-3 py-2 text-sm font-medium transition-colors ${
                     isActive(item.path)
                       ? "text-[var(--cyan-glow)] active"
@@ -50,7 +76,7 @@ const Navigation = () => {
                   data-testid={`nav-${item.name.toLowerCase()}`}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -92,11 +118,10 @@ const Navigation = () => {
                   <nav className="flex-1 p-4">
                     <div className="space-y-4">
                       {navItems.map((item) => (
-                        <Link
+                        <button
                           key={item.path}
-                          href={item.path}
-                          onClick={() => setIsOpen(false)}
-                          className={`block py-3 px-4 rounded-lg transition-colors ${
+                          onClick={() => scrollToSection(item.path)}
+                          className={`block py-3 px-4 rounded-lg transition-colors w-full text-left ${
                             isActive(item.path)
                               ? "text-[var(--cyan-glow)] bg-[var(--dark-blue)]"
                               : "text-white hover:text-[var(--cyan-glow)] hover:bg-[var(--dark-blue)]"
@@ -104,7 +129,7 @@ const Navigation = () => {
                           data-testid={`mobile-nav-${item.name.toLowerCase()}`}
                         >
                           {item.name}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   </nav>
