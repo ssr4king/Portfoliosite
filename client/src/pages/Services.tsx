@@ -9,24 +9,14 @@ const Services = () => {
       description: "Custom web applications built with modern technologies and best practices for optimal performance and user experience.",
       features: ["Responsive Design", "Performance Optimization", "Cross-browser Compatibility"]
     },
-    {
-      icon: "fas fa-mobile-alt",
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications that deliver seamless user experiences across all devices and platforms.",
-      features: ["React Native", "Progressive Web Apps", "App Store Optimization"]
-    },
+ 
     {
       icon: "fas fa-paint-brush",
       title: "UI/UX Design",
       description: "User-centered design solutions that combine aesthetics with functionality to create engaging digital experiences.",
       features: ["User Research", "Wireframing & Prototyping", "Design Systems"]
     },
-    {
-      icon: "fas fa-server",
-      title: "Backend Development",
-      description: "Robust server-side solutions with secure APIs, database design, and scalable architecture for your applications.",
-      features: ["RESTful APIs", "Database Design", "Cloud Integration"]
-    },
+
     {
       icon: "fas fa-search",
       title: "SEO Optimization",

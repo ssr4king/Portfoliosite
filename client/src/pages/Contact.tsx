@@ -79,9 +79,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-linkedin-in", href: "#", label: "LinkedIn" },
-    { icon: "fab fa-github", href: "#", label: "GitHub" },
-    { icon: "fab fa-twitter", href: "#", label: "Twitter" },
+    { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/in/shubham-singh-rajput-876580243/", label: "LinkedIn" },
+    { icon: "fab fa-github", href: "https://github.com/ssr4king", label: "GitHub" },
+    { icon: "fab fa-twitter", href: "https://x.com/Shubhams_Stwt?t=k7YrLLNZysYZ5oYlLeNGEQ&s=09", label: "Twitter" },
     { icon: "fab fa-dribbble", href: "#", label: "Dribbble" },
   ];
 
@@ -170,7 +170,7 @@ const Contact = () => {
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="John"
+                            placeholder="Shubham"
                             className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-[var(--cyan-glow)] focus:ring-[var(--cyan-glow)]"
                             data-testid="input-firstName"
                           />
@@ -188,7 +188,7 @@ const Contact = () => {
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Doe"
+                            placeholder="kumar"
                             className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-[var(--cyan-glow)] focus:ring-[var(--cyan-glow)]"
                             data-testid="input-lastName"
                           />
@@ -209,7 +209,7 @@ const Contact = () => {
                         <Input
                           {...field}
                           type="email"
-                          placeholder="john@example.com"
+                          placeholder="Shubham@example.com"
                           className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-[var(--cyan-glow)] focus:ring-[var(--cyan-glow)]"
                           data-testid="input-email"
                         />

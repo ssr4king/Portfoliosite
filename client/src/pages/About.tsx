@@ -4,9 +4,9 @@ import profileImage from "@assets/WhatsApp Image 2025-07-19 at 11.09.06 AM_17534
 
 const About = () => {
   const contactInfo = [
-    { label: "Email:", value: "hello@chandni.dev", icon: "fas fa-envelope" },
-    { label: "Phone:", value: "+1 (555) 123-4567", icon: "fas fa-phone" },
-    { label: "Location:", value: "San Francisco, CA", icon: "fas fa-map-marker-alt" },
+    { label: "Email:", value: "s.shubham999000@gmail.com", icon: "fas fa-envelope" },
+    { label: "Phone:", value: "6265037768", icon: "fas fa-phone" },
+    { label: "Location:", value: "Patna", icon: "fas fa-map-marker-alt" },
     { label: "Availability:", value: "Available", icon: "fas fa-calendar-check" },
   ];
 
@@ -34,21 +34,23 @@ const About = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Profile Image Column */}
-          <motion.div 
+            <motion.div 
             className="flex justify-center lg:justify-start"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="profile-glow-static w-80 h-80 sm:w-96 sm:h-96" data-testid="about-profile-image-container">
+           <div className="profile-glow-static w-80 h-80 sm:w-96 sm:h-96" data-testid="about-profile-image-container">
               <img 
                 src={profileImage}
                 alt="Shubham Kumar - About me" 
                 className="w-full h-full object-cover object-center rounded-full" 
-                data-testid="about-profile-image"
-              />
-            </div>
-          </motion.div>
+            data-testid="about-profile-image"
+               />
+             </div>  
+
+          </motion.div> 
+   
           
           {/* Content Column */}
           <motion.div 
@@ -79,34 +81,33 @@ const About = () => {
             
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
-              <a
-                href="#"
-                className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
-                data-testid="about-social-facebook"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
-                data-testid="about-social-twitter"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
-                data-testid="about-social-instagram"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
-                data-testid="about-social-linkedin"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
+ 
+                <a
+                  href="https://github.com/ssr4king"
+                  className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  data-testid="about-social-facebook"
+                >
+                  <i className="fab fa-facebook-f"></i> 
+                </a>
+                <a
+                  href="https://x.com/Shubhams_Stwt?t=k7YrLLNZysYZ5oYlLeNGEQ&s=09"
+                  className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  data-testid="about-social-twitter"
+                >
+                    <i className="fab fa-twitter"></i>
+                  </a><a
+                    href="https://www.instagram.com/singhshubham0001?igsh=bXR4eWdkdDYwc243"
+                    className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                    data-testid="about-social-instagram"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a><a
+                    href="https://www.linkedin.com/in/shubham-singh-rajput-876580243/"
+                    className="social-icon w-10 h-10 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                    data-testid="about-social-linkedin"
+                  >
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
             </div>
             
             <div className="mt-8">

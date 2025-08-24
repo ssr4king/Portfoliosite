@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TypeWriter from "@/components/TypeWriter";
-import profileImage from "@assets/WhatsApp Image 2025-07-19 at 11.09.06 AM_1753471708316.jpeg";
+import profileImage from "@assets/whatsapp3.png";
 
 const Home = () => {
   const socialLinks = [
-    { icon: "fab fa-facebook-f", href: "#", label: "Facebook" },
-    { icon: "fab fa-twitter", href: "#", label: "Twitter" },
-    { icon: "fab fa-instagram", href: "#", label: "Instagram" },
-    { icon: "fab fa-linkedin-in", href: "#", label: "LinkedIn" },
+    { icon: "fab fa-github", href: "https://github.com/ssr4king", label: "GitHub" },
+    { icon: "fab fa-twitter", href: "https://x.com/Shubhams_Stwt?t=k7YrLLNZysYZ5oYlLeNGEQ&s=09", label: "Twitter" },
+    { icon: "fab fa-instagram", href: "https://www.instagram.com/singhshubham0001?igsh=bXR4eWdkdDYwc243", label: "Instagram" },
+    { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/in/shubham-singh-rajput-876580243/", label: "LinkedIn" },
   ];
 
   const stats = [
-    { value: 3, label: "Years of", sublabel: "experience" },
-    { value: 15, label: "Projects", sublabel: "completed" },
+    { value: 0 , label: "Fresher", sublabel: "Open to Opportunities" },
+    { value: 5, label: "Projects", sublabel: "completed" },
     { value: 8, label: "Technologies", sublabel: "mastered" },
     { value: 100, label: "DSA Problems", sublabel: "solved" },
   ];

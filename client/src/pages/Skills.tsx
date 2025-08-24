@@ -23,13 +23,13 @@ const Skills = () => {
 
   const certifications = [
     {
-      title: "Data Structures and Algorithms",
-      institution: "IES College of Technology",
+      title: "JAVA & FRONTEND DEVELOPER",
+      institution: "CODING THINKER",
       year: "2024"
     },
     {
-      title: "Object Oriented Programming (Java)",
-      institution: "IES College of Technology",
+      title: "Object Oriented Programming (Java & C++)",
+      institution: "AUNPA CLASSES",
       year: "2023"
     }
   ];

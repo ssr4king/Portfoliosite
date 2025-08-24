@@ -37,7 +37,7 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
       category: "frontend",
       technologies: ["HTML", "CSS", "FontAwesome"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/ssr4king/Starbucks-Project",
       year: "2024"
     },
     {
@@ -49,7 +49,7 @@ const Portfolio = () => {
       category: "web",
       technologies: ["HTML", "CSS", "JavaScript", "Basic React", "FontAwesome"],
       liveUrl: "#",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 3,
@@ -59,8 +59,8 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
       category: "ecommerce",
       technologies: ["HTML", "CSS", "FontAwesome"],
-      githubUrl: "#",
-      year: "2024"
+      githubUrl: "https://github.com/ssr4king/Ecommerce-website",
+      year: "2023"
     }
   ];
 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Download, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import cvFile from "@assets/Shubham157_CV (3)_1753471316750.pdf";
+import cvFile from "@assets/Shubham157_CV.pdf";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");

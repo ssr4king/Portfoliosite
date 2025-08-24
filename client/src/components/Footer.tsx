@@ -18,10 +18,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: "fab fa-facebook-f", href: "#", label: "Facebook" },
-    { icon: "fab fa-twitter", href: "#", label: "Twitter" },
-    { icon: "fab fa-instagram", href: "#", label: "Instagram" },
-    { icon: "fab fa-linkedin-in", href: "#", label: "LinkedIn" },
+    { icon: "fab fa-github", href: "https://github.com/ssr4king", label: "Github" },
+    { icon: "fab fa-twitter", href: "https://x.com/Shubhams_Stwt?t=k7YrLLNZysYZ5oYlLeNGEQ&s=09", label: "Twitter" },
+    { icon: "fab fa-instagram", href: "https://www.instagram.com/singhshubham0001?igsh=bXR4eWdkdDYwc243", label: "Instagram" },
+    { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/in/shubham-singh-rajput-876580243/", label: "LinkedIn" },
   ];
 
   return (
@@ -74,15 +74,15 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center space-x-2" data-testid="footer-email">
                 <i className="fas fa-envelope text-[var(--cyan-glow)] w-4"></i>
-                <span>hello@chandni.dev</span>
+                <span>s.shubham999000@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2" data-testid="footer-phone">
                 <i className="fas fa-phone text-[var(--cyan-glow)] w-4"></i>
-                <span>+1 (555) 123-4567</span>
+                <span>6265037768</span>
               </li>
               <li className="flex items-center space-x-2" data-testid="footer-location">
                 <i className="fas fa-map-marker-alt text-[var(--cyan-glow)] w-4"></i>
-                <span>San Francisco, CA</span>
+                <span>Patna,Bihar</span>
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400" data-testid="footer-copyright">
-            © {currentYear} Portfolio. All rights reserved. Built with ❤️ by Chandni Chauhan
+            © {currentYear} Portfolio. All rights reserved. Built with ❤️ by Shubham kumar.
           </p>
         </div>
       </div>
