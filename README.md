@@ -194,7 +194,7 @@ Edit these files to update your information:
 
 ## 🔗 Links
 
-- **Live Demo**: [Your deployed URL]
+- **Live Demo**: [https://shubham-portfolio12.netlify.app/]
 - **GitHub**: [Your repository]
 - **Netlify Dashboard**: [https://app.netlify.com/projects/effervescent-klepon-74e8d1/overview](https://app.netlify.com/projects/effervescent-klepon-74e8d1/overview)
 
