@@ -15,6 +15,25 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 const Contact = () => {
   const { toast } = useToast();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   const form = useForm({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -86,38 +105,56 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 bg-[var(--dark-blue)]/30 min-h-screen pt-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+    <section className="py-20 bg-[var(--dark-blue)]/30 min-h-screen pt-32 theme-blue relative overflow-hidden">
+      {/* Animated Background Accents */}
+      <motion.div
+        className="absolute top-10 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"
+        animate={{
+          x: [0, -50, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]"
+        animate={{
+          y: [0, -30, 0],
+          rotate: [0, 90, 0],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={fadeInUp}
         >
           <h2 className="text-4xl font-bold text-gradient mb-4" data-testid="contact-title">Get In Touch</h2>
           <p className="text-gray-400 max-w-2xl mx-auto" data-testid="contact-subtitle">
             Ready to start your next project? Let's discuss how we can work together to bring your ideas to life
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            variants={containerVariants}
           >
-            <h3 className="text-2xl font-bold text-white mb-6" data-testid="contact-info-title">Let's Connect</h3>
-            
+            <motion.h3 variants={fadeInUp} className="text-2xl font-bold text-white mb-6" data-testid="contact-info-title">Let's Connect</motion.h3>
+
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   className="flex items-center space-x-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index }}
+                  variants={fadeInUp}
                   data-testid={info.testId}
                 >
                   <div className="w-12 h-12 bg-[var(--cyan-glow)]/20 rounded-lg flex items-center justify-center">
@@ -130,33 +167,39 @@ const Contact = () => {
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Social Media Links */}
-            <div className="pt-8">
+            <motion.div variants={fadeInUp} className="pt-8">
               <h4 className="text-white font-semibold mb-4" data-testid="social-links-title">Follow Me</h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-5">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="social-icon w-12 h-12 bg-gray-800 hover:bg-[var(--cyan-glow)] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
-                    whileHover={{ y: -3 }}
+                    className="social-icon w-12 h-12 bg-[#0F172A] rounded-xl flex items-center justify-center text-gray-400 border border-gray-800 relative overflow-hidden group"
+                    whileHover={{
+                      y: -5,
+                      color: "white",
+                      borderColor: "#3b82f6",
+                    }}
+                    whileTap={{ scale: 0.95 }}
                     data-testid={`contact-social-${social.label.toLowerCase()}`}
                   >
-                    <i className={`${social.icon} text-lg`}></i>
+                    {/* Inner Glow on Hover */}
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-[#3b82f6] blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-[#3b82f6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <i className={`${social.icon} text-lg relative z-10`}></i>
                   </motion.a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-          
+
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             className="bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={fadeInUp}
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-testid="contact-form">
@@ -198,7 +241,7 @@ const Contact = () => {
                     )}
                   />
                 </div>
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -218,7 +261,7 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="subject"
@@ -237,7 +280,7 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -257,7 +300,7 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <Button
                   type="submit"
                   disabled={contactMutation.isPending}
@@ -271,7 +314,7 @@ const Contact = () => {
             </Form>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
